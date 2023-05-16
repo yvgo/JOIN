@@ -129,7 +129,7 @@ function modalEditContact(i, singleContact, acronym) {
                 <form class="contactForm" onsubmit="editContact(${i}); return false;">
                     <input required id="editNameInput${i}" class="contactForms editFormName" type="text" minlength="5" value="${singleContact['contactName']}">
                     <input required id="editMailInput${i}" class="contactForms editFormMail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="${singleContact['email']}">
-                    <input required id="editPhoneInput${i}" class="contactForms editFormPhone" type="tel" minlength="8" value="${singleContact['phone']}">
+                    <input required id="editPhoneInput${i}" class="contactForms editFormPhone" type="number" minlength="8" value="${singleContact['phone']}">
                     <div class="buttonArrange">
                         <button id="save" type="submit" class="editButtonSave">Save</button>
                     </div>
@@ -172,7 +172,7 @@ function modalNewContact() {
                 <form class="contactForm" onsubmit="newContact(); return false;">
                     <input required onkeydown="handleKeqUpName(event)" id="newContactName" class="contactForms editFormName" type="text" minlength="5" placeholder="Name" autofocus>
                     <input required onkeydown="handleKeqUpMail(event)" id="newMail" class="contactForms editFormMail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email">
-                    <input required onkeydown="handleKeqUpPhone(event)" id="newPhone" class="contactForms editFormPhone" type="tel" minlength="8" placeholder="Phone">
+                    <input required onkeydown="handleKeqUpPhone(event)" id="newPhone" class="contactForms editFormPhone" type="number" minlength="8" placeholder="Phone">
                     <div class="buttonArrange">
                         <button class="editButtonCancel" onclick="closeModal()">Cancel</button>
                         <button id="create" onkeydown="handleKeqUpCreate(event)" type="submit" class="editButtonCreate">Create Contact</button>
