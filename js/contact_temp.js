@@ -68,9 +68,10 @@ function contactDetailsBox(i, singleContact, acronym) {
                 <img class="widthPen" src="../assets/img/pen-black.png">
                 <span class="editContactLayout">Edit Contact</span>
             </div>
-            <form class="deleteDesktop klickable" onclick="deleteContact(${i}); return false;">
-                <button class="trashIconButton" type="submit">
-                        <img class="trashIcon" src="../assets/img/trash-icon.png">
+            <form class="deleteDesktop" onclick="deleteContact(${i}); return false;">
+                <button class="trashIconButton klickable" type="submit">
+                    <img class="trashIcon" src="../assets/img/trash-icon.png">
+                    <span class="editContactLayout trash">Delete Contact</span>
                 </button>
             </form>
         </div>

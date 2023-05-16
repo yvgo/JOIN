@@ -228,6 +228,12 @@ body {
     color: #29ABE2;
 }
 
+.trash {
+    font-size: 16px;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .buttonContactContainerDesktop,
 .borderBlueDesktop,
 .editContacts {
@@ -372,8 +378,28 @@ body {
     to {top: 20px;}
 } 
 
-
 @media only screen and (min-width: 768px) {
+
+    .contentContainer {
+        padding: 80px 0px 10px 200px !important;
+    }
+
+    /*List*/
+    .contactListContainer {
+        flex: 1;
+        height: 98vh;
+        background-color: #fff;
+        padding-top: 0px;
+        padding-bottom: 0;
+    }
+
+    .contactDetailsContainer {
+        margin-left: 50px;
+    } 
+
+}
+
+@media only screen and (min-width: 1017px) {
 
     h1.contacts {
         font-size: 47px;
@@ -415,6 +441,7 @@ body {
         display: none;
     }
 
+    /*Details*/
     .contactDetailsContainer {
         display: flex;
         flex-direction: column;
@@ -589,8 +616,8 @@ body {
     }
 
     .trashIcon {
-        width: 25px;
-        height: 25px;
+        width: 23px;
+        height: 23px;
         margin-left: 50px;
     }
 
