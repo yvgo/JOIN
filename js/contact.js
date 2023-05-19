@@ -24,6 +24,7 @@ function compareStrings(a, b) {
  */
 async function renderContacts() {
     await downloadFromServer();
+    setPage('contacts');
     contacts = JSON.parse(backend.getItem('contacts')) || [];
     categories = JSON.parse(backend.getItem('categories')) || [];
     prios = JSON.parse(backend.getItem('prios')) || [];
@@ -116,6 +117,9 @@ async function newContactRender(singleContact) {
     closeModal();
     renderContacts();
     showSuccess();
+    setTimeout(() => {
+        hideSuccess();
+     }, 2000);
 } 
 
 
@@ -318,6 +322,14 @@ function handleKeqUpPhone(event) {
         document.getElementById('create').focus();
         return false;
     }
+}
+
+/**
+ * The function hides a success message by adding a 'd-none' class to the element with the ID 'dialog' and clearing its inner HTML.
+ */
+ function hideSuccess() {
+    document.getElementById('dialog').classList.add('d-none');
+    document.getElementById('dialog').innerHTML = '';
 }
 
 /**

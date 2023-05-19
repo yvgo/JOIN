@@ -106,3 +106,8 @@ function showLegalEN() {
     document.getElementById('legalenglish').classList.remove('d-none');
     document.getElementById('legalgerman').classList.add('d-none');
 }
+
+function setPage(pagename) {
+    selectedPage = '';
+    selectedPage = pagename;
+  }

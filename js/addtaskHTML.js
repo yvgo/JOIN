@@ -71,7 +71,8 @@ function addNewSubTaskHTML(subtask, i) {
   if (subtask.checked) {
     return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbox-checked.png" onclick="toggleSubtaskCheckbox(${i})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTask(${i})"></div>`;
   } else {
-  return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbutton-inactive.png" onclick="toggleSubtaskCheckbox(${i})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTask(${i})"></div>`;}
+    return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbutton-inactive.png" onclick="toggleSubtaskCheckbox(${i})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTask(${i})"></div>`;
+  }
 }
 
 
@@ -109,7 +110,8 @@ function subTaskListTaskViewHTML(subtask, i, selectedTask) {
   if (subtask.checked) {
     return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbox-checked.png" onclick="toggleSubtaskCheckboxEdit(${i}, ${selectedTask})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTaskEdit(${i}, ${selectedTask})"></div>`;
   } else {
-  return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbutton-inactive.png" onclick="toggleSubtaskCheckboxEdit(${i}, ${selectedTask})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTaskEdit(${i}, ${selectedTask})"></div>`;}
+    return `<div class="subtask" id="subtask-${i}"><div class="subflex"><img id="subtaskbox${i}" src="../assets/img/checkbutton-inactive.png" onclick="toggleSubtaskCheckboxEdit(${i}, ${selectedTask})"><span>${subtask.description}</span></div><img class="icon" src="../assets/img/trash.png" onclick="deleteSubTaskEdit(${i}, ${selectedTask})"></div>`;
+  }
 }
 
 
@@ -120,13 +122,13 @@ function subTaskListTaskViewHTML(subtask, i, selectedTask) {
  */
 function editBtnContainerHTML(i) {
   return `<div id="movemenu" class="d-none"></div>
-<div id="taskmenu" class="d-none">
-  <div class="buttonwhite" onclick="openMoveMenu(${i})">Move</div>
-  <div class="buttonwhite" onclick="openEditForm(${i})">Edit</div>
-  <div class="buttonwhite" onclick="openDeleteForm(${i})">Delete</div>  
-  <div class="buttonwhite" onclick="closeTaskview()">To Board</div>
-</div>
-<div id="edit-btn" class="edit-btn" onclick="openTaskSubMenu()"><img src="../assets/img/edit.png" alt=""></div>`;
+    <div id="taskmenu" class="d-none">
+      <div class="buttonwhite" onclick="openMoveMenu(${i})">Move</div>
+      <div class="buttonwhite" onclick="openEditForm(${i})">Edit</div>
+      <div class="buttonwhite" onclick="openDeleteForm(${i})">Delete</div>  
+      <div class="buttonwhite" onclick="closeTaskview()">To Board</div>
+    </div>
+    <div id="edit-btn" class="edit-btn" onclick="openTaskSubMenu()"><img src="../assets/img/edit.png" alt=""></div>`;
 }
 
 
