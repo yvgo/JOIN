@@ -6,8 +6,7 @@ let colors = ['pink', 'mintgreen', 'orange', 'lightblue', 'red', 'applegreen', '
  * 
  */
 async function init_login() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
+    users = await loadItem('users');
     load();
     rememberload();
     render();
@@ -18,8 +17,7 @@ async function init_login() {
  * 
  */
 async function init_reset_passwordHTML() {
-    await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
+    users = await loadItem('users');
 }
 
 /**
@@ -33,7 +31,7 @@ function render() {
     let signup = document.getElementById('sign-up');
     signup.classList.add('sign-up-loaded');
     let logo = document.getElementById('logo-mobile');
-    logo.src = "./assets/img/Logo/Capa2logo-colored-mobile.png";
+    logo.src = "../assets/img/Logo/Capa 2logo-colored-mobile.png";
     logo.style = "scale: 2"
 }
 
@@ -56,19 +54,24 @@ function screenWidthCheck() {
  * If the user exists, and the user is not the guest, then show the popup, save the user, and hide the
  * popup after 3 seconds.
  */
-function showPopUpPw() {
+ function showPopUpPw() {
     let inputmail = document.getElementById('forgot-email');
     let popup = document.getElementById('popup');
     let user = users.find(u => u.email == inputmail.value);
-    let guest = users.find(u => u.email == 'Guest@guestemail.com');
+    let guest = users.find(u => u.email == 'guest@guestemail.com');
     if (user) {
-        if (user == guest) {showPopupNotFound();} else {
+        if (user == guest) {
+            showPopupNotFound();
+        } 
+        else {
             popup.classList.remove('d-none');
             activeUser = [];
             activeUser.push(user);
             save();
-            setTimeout(() => popup.classList.add("d-none"), 3000);
-            form.action = action;
+            setTimeout(() => {
+                popup.classList.add("d-none");
+                window.location.href = "./index.html";
+        }, 3000);
         }
     } else {showPopupNotFound();}
     inputmail.value = '';
@@ -104,12 +107,11 @@ function showPopupNotFound() {
 
 
 /* This function is used to register a new account. */
-async function registNewAccount() {
+async function registerNewAccount() {
     let name = document.getElementById('name').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let popup = document.getElementById('popup');
-    /* let colors = ['pink', 'mintgreen', 'orange', 'lightblue', 'red', 'applegreen', 'magenta', 'brightblue']; */
     let color = colors[Math.floor(Math.random() * colors.length)];
 
     let user = users.find(u => u.email == email);
@@ -123,13 +125,13 @@ async function registNewAccount() {
             email: email,
             password: password,
             color: color,
-            contacts: [],
-            tasks: [],
             animationCounter: 0
         };
         users.push(account);
-        await backend.setItem('users', JSON.stringify(users));
-        setTimeout(() => popup.classList.add("d-none"), 3000);
+        await setItem('users', users);
+        setTimeout(() => {
+            popup.classList.add("d-none");
+        }, 3000);
         clearInput();
     }
 }
@@ -190,7 +192,7 @@ async function login() {
         activeUser.push(user);
         checkForCheckbox(checkbox, rememberlogin);
         save();
-        window.location.href = "./html/summary.html"
+        window.location.href = "../html/summary.html"
     }
 }
 

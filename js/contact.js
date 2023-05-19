@@ -217,7 +217,7 @@ function markSelectedContact(i) {
  */
 function contactShowDetails(i) {
     showScroll();
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1017) {
         document.getElementById('listAllContacts').classList.add('d-none');
         document.getElementById('descriptionContainer').classList.add('block');
         document.getElementById('singleData').classList.add('block');

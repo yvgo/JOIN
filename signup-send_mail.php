@@ -57,7 +57,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case ("POST"): //Send the email;
         header("Access-Control-Allow-Origin: *");
 
-        $subject = "Contact From JOIN-PM-Tool";
+        $subject = "Contact From JOIN-PROJECT-GROUP-465";
         $headers = "From:  noreply@developerakademie.com";
 
         mail($_POST['email'], $subject,$_POST['message'], $headers);

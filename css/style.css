@@ -532,6 +532,7 @@ input::placeholder {
 
     .logo-mobile {
         display: block;
+        margin-bottom: 2.5em;
     }
     .login {
         height: 530px;
@@ -545,7 +546,7 @@ input::placeholder {
         left: 30px;
     }
     .headline {
-        font-size: 47px;
+        font-size: 37px;
     }
 
     .login-input {
@@ -559,7 +560,7 @@ input::placeholder {
     .sign-up-container {
         position: relative;
         justify-content: center;
-        margin-top: -85px;
+        margin-top: -70px;
         top: unset;
         right: unset;
         z-index: 3;
