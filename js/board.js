@@ -3,6 +3,7 @@
  */
 async function initBoard() {
   await downloadFromServer();
+  setPage('board');
   users = JSON.parse(backend.getItem("users")) || [];
   categories = JSON.parse(backend.getItem("categories")) || [];
   prios = JSON.parse(backend.getItem("prios")) || [];
@@ -172,7 +173,7 @@ function addTaskOnBoard(column) {
  * If the user is on the board page, hide the delete message container
  */
 function hideDeleteMsgContainer() {
-    if (window.location.pathname == "/html/board.html") {
+    if (window.location.pathname == "/join-me/html/board.html") {
       document.getElementById("deletemsgcontainer").classList.add("d-none");
     }
   }

@@ -228,12 +228,12 @@ function renderTodayDueDate() {
  * Renders the "Create" button to the header section depending on which page is shown and which screen width is used.
  */
 function displayCreateBtnHeader() {
-  if (window.location.pathname == "/html/board.html" && window.innerWidth < 768) {
+  if (window.location.pathname == "/join-me/html/board.html" && window.innerWidth < 768) {
     document.getElementById("create-btn-top").classList.remove("d-none");
   }
-  if (window.location.pathname == "/html/addtask.html") {
+  if (window.location.pathname == "/join-me/html/addtask.html") {
   document.getElementById("create-btn-top").classList.remove("d-none");}
-  if (window.location.pathname == "/html/contacts.html" && window.innerWidth < 767) {
+  if (window.location.pathname == "/join-me/html/contacts.html" && window.innerWidth < 767) {
     document.getElementById("create-btn-top").classList.remove("d-none");
   }
 }

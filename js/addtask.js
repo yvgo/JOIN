@@ -13,6 +13,7 @@ let categoryCreationValidation = false;
  */
 async function initAddTask() {
   await downloadFromServer();
+  setPage('addTask');
   users = JSON.parse(backend.getItem("users")) || [];
   categories = JSON.parse(backend.getItem("categories")) || [];
   prios = JSON.parse(backend.getItem("prios")) || [];
